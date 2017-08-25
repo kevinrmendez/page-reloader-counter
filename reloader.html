@@ -1,0 +1,62 @@
+<html> 
+    <head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+        
+    </head> 
+    <body>
+        <div id="container">
+        <h1>Page reloader counter</h1>
+        <h3> Number of times your website has been reloaded</h3>
+        <span id="counter_display"></span>
+        <div>
+            <button onclick="reset()">Reset counter </button>
+            <button onclick="removels()">Remove counter from localStorage</button>
+            </div>
+        </div>
+    </body>
+    <script>
+    //set variables
+    var counter = 0,
+        storage = 0,
+        counterDisplay = document.getElementById('counter_display');
+   
+    window.onload= function(){
+        if(localStorage.getItem('counter')=== null){
+            localStorage.setItem('counter',counter);
+        }
+        else{
+        storage = localStorage.getItem('counter');
+        counter = storage;
+        counter++;
+         localStorage.setItem('counter',counter);
+        storage = localStorage.getItem('counter');
+        counterDisplay.innerHTML = counter;
+        }
+        console.log(storage);
+        console.log(counter);
+    };
+    // reset counter
+    var reset = function(){
+        console.log(counter);
+        counter = 0;
+        if(counterDisplay.innerHTML === " "){
+            counterDisplay.innerHTML = " "
+        }else{
+        counterDisplay.innerHTML = 0;
+        }
+        console.log(counter)
+        localStorage.setItem('counter',counter);
+    }
+    //remove local storage item from browser
+    var removels = function(){
+        localStorage.removeItem('counter');
+        if(localStorage.getItem('counter') === null){
+            counterDisplay.innerHTML = '';
+            alert('counter has been remove from local storage succesfully!')
+        }
+    }
+
+    </script>
+
+</html>

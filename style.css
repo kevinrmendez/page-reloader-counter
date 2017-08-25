@@ -1,0 +1,35 @@
+          
+   /* css style to look your website more like an app */
+body{
+                font-family: 'Roboto', sans-serif;
+            }
+        #container{
+            background-color: #EFEFF2;
+            border-radius: 50px;
+            width: 50%;
+            position: relative;
+            margin: 0 auto;
+
+        }
+        #counter_display{
+            display: block;
+            font-size: 4em;
+            width: 50%;
+            text-align: center;
+            position: relative;
+            left: 20%;
+        }
+        h1,h3{
+            padding-top: 2em;
+            padding-bottom: 1em;
+            color: #006EB6;
+            width: 50%;
+            margin: 0 auto;
+            ;
+        }
+        button{
+           margin-left: 2em;
+           margin-bottom: 2em;
+           position: relative;
+           left:20%;
+        }
